@@ -2,34 +2,22 @@ package ques1HW;
 
 public class Main
 {
-    static void countVowelsAndConsonants(String text)
+    static void checkPinLength(String pin)
     {
-        int vowels = 0;
-        int consonants = 0;
-
-        for(int i = 0; i < text.length(); i++)
+        if(pin.length() != 4)
         {
-            char ch = text.charAt(i);
-
-            if(ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u' ||
-               ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U')
-            {
-                vowels++;
-            }
-            else if(ch != ' ')
-            {
-                consonants++;
-            }
+            System.out.println("Invalid PIN — must be exactly 4 digits.");
         }
-
-        System.out.println("Vowels: " + vowels);
-        System.out.println("Consonants: " + consonants);
+        else
+        {
+            System.out.println("PIN length OK.");
+        }
     }
 
     public static void main(String[] args)
     {
-        String text = "Java Programming";
+        String pin = "4820";
 
-        countVowelsAndConsonants(text);
+        checkPinLength(pin);
     }
 }
