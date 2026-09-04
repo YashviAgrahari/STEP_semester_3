@@ -2,26 +2,32 @@ package ques2HW;
 
 public class Main
 {
-    static void parseStudentRecord(String csvLine)
+    static String reverseEachWord(String sentence)
     {
-        String[] data = csvLine.split(",");
+        String[] words = sentence.split(" ");
 
-        if(data.length != 3)
+        String result = "";
+
+        for(int i = 0; i < words.length; i++)
         {
-            System.out.println("Invalid Record");
+            StringBuilder reverse = new StringBuilder(words[i]);
+            reverse.reverse();
+
+            result = result + reverse;
+
+            if(i < words.length - 1)
+            {
+                result = result + " ";
+            }
         }
-        else
-        {
-            System.out.println("Name: " + data[0]);
-            System.out.println("Roll No: " + data[1]);
-            System.out.println("Dept: " + data[2]);
-        }
+
+        return result;
     }
 
     public static void main(String[] args)
     {
-        String record = "Ananya Verma,RA2211003010123,CSE";
+        String sentence = "hello club";
 
-        parseStudentRecord(record);
+        System.out.println(reverseEachWord(sentence));
     }
 }
