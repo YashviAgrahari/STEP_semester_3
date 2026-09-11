@@ -1,6 +1,6 @@
 package ques1HW;
 
-class AccessChecker
+public class AccessChecker
 {
     static String classifyAccess(String fieldModifier, String accessorContext)
     {
@@ -45,12 +45,8 @@ class AccessChecker
 
         for (int i = 0; i < attempts.length; i++)
         {
-            String result = classifyAccess(
-                attempts[i][0],
-                attempts[i][1]
-            );
-
-            if (result.equals("ALLOWED"))
+            if (classifyAccess(attempts[i][0], attempts[i][1])
+                    .equals("ALLOWED"))
                 allowed++;
             else
                 denied++;
@@ -59,4 +55,3 @@ class AccessChecker
         return "Allowed: " + allowed + " | Denied: " + denied;
     }
 }
-
