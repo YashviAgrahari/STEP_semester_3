@@ -1,6 +1,6 @@
 package ques2HW;
 
-class AccessChecker
+public class AccessChecker
 {
     static String classifyAccess(String fieldModifier, String accessorContext)
     {
@@ -25,10 +25,15 @@ class AccessChecker
         {
             if (accessorContext.equals("SAME_CLASS") ||
                 accessorContext.equals("SAME_PACKAGE") ||
-                accessorContext.equals("SUBCLASS_DIFFERENT_PACKAGE_OWN_TYPE"))
+                accessorContext.equals(
+                    "SUBCLASS_DIFFERENT_PACKAGE_OWN_TYPE"))
+            {
                 return "ALLOWED";
+            }
             else
+            {
                 return "DENIED";
+            }
         }
 
         if (fieldModifier.equals("public"))
